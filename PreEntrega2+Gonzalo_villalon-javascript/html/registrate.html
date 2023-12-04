@@ -14,13 +14,25 @@
 
 <body>
   <header>
-    <div class="title">
-      <img src="/assets/image/dejavu.png" id="icono" alt="logo-dejavu">
-      <h1>Dejavu Vinos y Destilados </h1>
-      <div>
-
+    <div class="div">
+      <div class="title">
+        <img src="/assets/image/dejavu.png" id="icono" alt="logo-dejavu">
+        <h1>Dejavu Vinos y Destilados </h1>
       </div>
+        <div class="compras">
+          <button>
+            <img src="/assets/image/usuario.png" id="usuario" alt="icono usuario">
+          </button>
+          <button>
+            <img src="/assets/image/carrito-de-compras.png" id="carrito" alt="carrito compras">
+          </button>
+          <div id="nombreUsuario">
 
+          </div>
+        </div>
+        <div>
+        </div>
+      
     </div>
 
     <nav class="navbar navbar-expand-lg bg-light   ">
@@ -59,16 +71,58 @@
       </div>
       
     </header>
-    <div class="container-fluid">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Inserte su bùsqueda" aria-label="Search">
-        <button class="btn btn-dark-success  bg-light border-bottom-dark" type="submit"><img src="/assets/image/buscar.png" id="search" alt=""></button>
-      </form>
-    </div>
+    
   <main>
     <div>
-      <form action="submit">
-        <label for="">usuario</label>
+      <form id="formulario"class="row g-3">
+        <div class="col-md-6">
+          <label for="Nombre" id="mail" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre">
+        </div>
+        <div class="col-md-6">
+          <label for="apellido" id="mail" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido">
+        </div>
+        <div class="col-md-6">
+          <label for="edad" id="mail" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edad">
+        </div>
+        <div class="col-md-6">
+          <label for="mail" id="mail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="mail">
+        </div>
+        <div class="col-md-6">
+          <label for="contraseña" id="contraseña" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contraseña">
+        </div>
+        <div class="col-12">
+          <label for="direccion" id="direccion" class="form-label">Direccion</label>
+          <input type="text" class="form-control" id="direccion" placeholder="1234 Calle Principal">
+        </div>
+        <div class="col-12">
+          <label for="tipoDireccion" id="tipoDireccion"class="form-label">Direccion 2</label>
+          <input type="text" class="form-control" id="tipoDireccion" placeholder="Departamento, estudio,o piso">
+        </div>
+        <div class="col-md-6">
+          <label for="ciudad" id="ciudad"class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="ciudad">
+        </div>
+        <div class="col-md-6">
+          <label for="telefono"class="form-label">Telefono</label>
+          <input type="number" placeholder="+54" class="form-control" id="telefono">
+        </div>
+        
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Confirmar Datos
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" id="enviar"class="btn btn-primary">Registrarse</button>
+        </div>
       </form>
   
     </div>
@@ -105,5 +159,6 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

@@ -1,40 +1,72 @@
-alert("Bienvenido a Dejavu Vinos y Destilados" )
-alert("A continuaciòn ingrese sus datos personales")
-const Usuario=function(nombre,apellido,edad){
-  this.nombre=nombre,
-  this.apellido=apellido,
-  this.edad=edad;
+
+
+let iconoUsuario = document.getElementById("usuario");
+iconoUsuario.addEventListener("click", Redirecciones)
+
+function Redirecciones() {
+  location.href = "/html/registrate.html";
+}
+let formulario = document.getElementById("formulario");
+console.log([formulario]);
+let nombre = document.getElementById("nombre")
+let apellido = document.getElementById("apellido");
+let edad = document.getElementById("edad");
+let email = document.getElementById("mail");
+let contraseña = document.getElementById("contraseña");
+let direccion = document.getElementById("direccion");
+let tipoDireccion = document.getElementById("tipoDireccion");
+let ciudad = document.getElementById("ciudad");
+let telefono = document.getElementById("telefono");
+
+
+//objeto contructor
+function Ingreso(nombre, apellido, edad, email, direccion, tipoDireccion, ciudad, telefono) {
+  this.nombre = nombre
+  this.apellido = apellido
+  this.edad = edad
+  this.email = email
+  this.direccion = direccion
+  this.tipoDireccion = tipoDireccion
+  this.ciudad = ciudad
+  this.telefono = telefono
 }
 
-function PrimerUsuario() {
-  let usuario1=new Usuario( prompt("Ingrese su Nombre").toLowerCase(),prompt("Ingrese su apellido").toLowerCase(),parseInt(prompt("Ingrese su edad")))
-  if (usuario1.nombre ==null || usuario1.apellido ==null || isNaN(usuario1.edad)) {
-    alert("Te has olvidado de ingresar tus datos,reinicia la pagina para volver a ingresar los datos")}
-    
-    else{
-      alert("Invitando a dos amigos accedes a maravillosas promos!!")
-      Confirmacion()
-    }
-  }
-  PrimerUsuario() 
-  
-  
 
-function Confirmacion() {
-  let usuarios=[]
-  let valor= confirm("¿Tienes dos amigos para ingresar a las promos ?");
-    if (valor=== true) {
-      alert("A continuaciòn ingrese los datos de tus amigos invitados")
-      let usuario2=new Usuario( prompt("Ingrese su Nombre").toLowerCase(),prompt("Ingrese su apellido").toLowerCase(),parseInt(prompt("Ingrese su edad")))
-      let usuario3=new Usuario( prompt("Ingrese su Nombre").toLowerCase(),prompt("Ingrese su apellido").toLowerCase(),parseInt(prompt("Ingrese su edad")))
-     usuarios.push(usuario2,usuario3);
-     let acceso= usuarios.filter(usuario=> (usuario.edad >=18 ) );
-     
-   if (acceso.length>1) {
-      alert("Acceso Confirmado")
-      
-    }else{
-      alert("No cumples con los requisitos de edad de tus invitados,vuelve a intentarlo para poder accesder a las promos")
-    }
-}
-}
+
+window.onload = function() {
+let valorGuardado= localStorage.getItem("usuarioIngresado")
+if (valorGuardado){
+  let objetoGuardado=JSON.parse(valorGuardado)
+ usuario.innerText= `${objetoGuardado.nombre}  ${objetoGuardado.apellido}`
+ usuario.classList.add("text-light");
+}}
+
+//nombre de usuario ingresado
+let usuario = document.getElementById("nombreUsuario");
+
+
+//Boton
+let enviar = document.getElementById("enviar");
+
+
+enviar.addEventListener("click", e => {
+  e.preventDefault();
+  let valorNombre = nombre.value;
+  let valorApellido = apellido.value;
+  usuario.innerText = valorNombre + " " + valorApellido;
+  usuario.classList.add("text-light");
+  let valorEdad = edad.value;
+  let valorEmail = email.value;
+  let valorDireccion = direccion.value;
+  let valorTipoDireccion = tipoDireccion.value;
+  let valorCiudad = ciudad.value;
+  console.log(valorCiudad);
+  let valorTelefono = telefono.value;
+
+  const datos = new Ingreso(valorNombre, valorApellido, valorEdad, valorEmail, valorDireccion, valorTipoDireccion, valorCiudad, valorTelefono);
+  console.log(datos);
+
+localStorage.setItem("usuarioIngresado",JSON.stringify(datos));
+
+})
+
