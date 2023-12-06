@@ -11,8 +11,8 @@ let usuario = document.getElementById("nombreUsuario");
 let enviar = document.getElementById("enviar");
 let formulario = document.getElementById("formulario");
 const contenedor = document.getElementById("cards")
-
-
+let buscador=document.getElementById("buscador");
+console.log(buscador);
 //objeto contructor
 function Ingreso(nombre, apellido, edad, email, direccion, tipoDireccion, ciudad, telefono) {
   this.nombre = nombre
@@ -54,7 +54,7 @@ function Impresion() {
                 <div>
                 <p id="precioProducto"class="card-text">${datos.precio}</p>
                 <div class="col-12">
-                <button type="submit" id="añadirCarrito"class="btn btn-primary">añadir al carrito</button>
+                <button id="añadirCarrito"class="btn btn-primary">añadir al carrito</button>
               </div>
                 <input type="number"placeholder="Cantidad" id="cantidad" name="tentacles"  />
       
@@ -67,27 +67,58 @@ function Impresion() {
   )
 }
 
-function añadirCarrito() {
-  const botonAñadirCarrito = document.getElementById("añadirCarrito")
-  console.log(botonAñadirCarrito)
-botonAñadirCarrito.addEventListener("click",( e => {
-  e.preventDefault;
-  whiskys.find((datos=>{
-    let objetoNuevo={
-      nombre:datos.nombre,
-      precio:datos.precio,
-      id:datos.id,
-    }
-    let cantidad=document.getElementById('cantidad')
-    objetoNuevo.cantidad=cantidad
-    console.log(objetoNuevo)
-  }))
+// function añadirCarrito() {
+//   const botonAñadirCarrito = document.getElementById("añadirCarrito")
+//   console.log(botonAñadirCarrito)
+// botonAñadirCarrito.addEventListener("click",( e => {
+//   e.preventDefault;
+//   whiskys.find((datos=>{
+//     let objetoNuevo={
+//       nombre:datos.nombre,
+//       precio:datos.precio,
+//       id:datos.id,
+//     }
+//     let cantidad=document.getElementById('cantidad')
+//     objetoNuevo.cantidad=cantidad.value
+//     console.log(objetoNuevo)
+//   }))
 
   
-})
-)}
+// })
+// )}
 
 
+// function Buscador(){
+// const imput=document.getElementById("buscador").value;
+// console.log(imput)
+// const buscar= imput.trim().toUpperCase();
+// const resultado=whiskys.filter((producto)=>producto.nombre.toUpperCase().includes(buscar))
+// if(resultado.length>0){
+//   resultado.forEach((producto)=>{
+//     let cardd = document.createElement("div")
+//     cardd.innerHTML = `
+//     <div class="card" id="contenedorCards"style="width: 18rem;">
+//      <img src="${producto.imagen}" class="card-img-top" alt="...">
+//      <div class="card-body">
+//        <h5 id="nombreProducto"class="card-title">${producto.nombre}</h5>
+//        <p class="card-text">${producto.descripcion}</p>
+//        <div>
+//        <p id="precioProducto"class="card-text">${producto.precio}</p>
+//        <div class="col-12">
+//        <button id="añadirCarrito"class="btn btn-primary">añadir al carrito</button>
+//      </div>
+//        <input type="number"placeholder="Cantidad" id="cantidad" name="tentacles"  />
+
+//        </div>
+//      </div>
+//    </div>`
+//  console.log(contenedor)
+// contenedor.appendChild(cardd)
+// })
+
+// }
+
+//   }Buscador()
 
 function Usuario() {
   enviar.addEventListener("click",( e => {
@@ -134,7 +165,7 @@ if (formulario) {
   Usuario()
 }
 
-añadirCarrito() 
+// añadirCarrito()
 
 
 
