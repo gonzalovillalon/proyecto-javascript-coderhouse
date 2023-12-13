@@ -36,7 +36,7 @@ const Cartas = function (nombre, imagen, descripcion, precio,id) {
 }
 const whiskys = [
   new Cartas("Jim Beam", "/assets/image/foto.png.jpg", " Jim Beam es una marca norteamericana de whisky de Bourbon producida en Clermont, Kentucky. Fue una de las marcas más vendidas durante el año 2008.","$ 48.000",1),
-  new Cartas("Blue Label", "/assets/image/bluelabel.jpg", ">Johnnie Walker Blue Label es una obra maestra inigualable. Es una mezcla exquisita hecha con algunos de los whiskies más raros y excepcionales de Escocia.","$ 100.000",2),
+  new Cartas("Blue Label", "/assets/image/bluelabel.jpg", "Johnnie Walker Blue Label es una obra maestra inigualable. Es una mezcla exquisita hecha con algunos de los whiskies más raros y excepcionales de Escocia.","$ 100.000",2),
   new Cartas("Johnnier Walker", "/assets/image/johnnierwalker.jpg", "Johnnie Walker 18 Años es una combinación suave y completa de hasta 18 whiskies diferentes de toda Escocia", "$ 120.000",3)
 ]
 //iMPRIMIR CARTAS
@@ -67,25 +67,20 @@ function Impresion() {
   )
 }
 
-// function añadirCarrito() {
-//   const botonAñadirCarrito = document.getElementById("añadirCarrito")
-//   console.log(botonAñadirCarrito)
-// botonAñadirCarrito.addEventListener("click",( e => {
-//   e.preventDefault;
-//   whiskys.find((datos=>{
-//     let objetoNuevo={
-//       nombre:datos.nombre,
-//       precio:datos.precio,
-//       id:datos.id,
-//     }
-//     let cantidad=document.getElementById('cantidad')
-//     objetoNuevo.cantidad=cantidad.value
-//     console.log(objetoNuevo)
-//   }))
+function añadirCarrito() {
+  const botonAñadirCarrito = document.getElementById("añadirCarrito")
+  console.log(botonAñadirCarrito)
+botonAñadirCarrito.addEventListener("click",( e => {
+  e.preventDefault;
+ const carrito= whiskys.find((datos=>{
 
-  
-// })
-// )}
+    datos==datos.id
+    console.log(carrito)
+  }))
+
+
+})
+)}
 
 
 // function Buscador(){
